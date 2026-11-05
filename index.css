@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-navy-950 text-slate-100 font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070f1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1b325f;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00e5ff;
+}
+
+/* Leaflet Container Styling */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #0a192f !important;
+  font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #0a192f !important;
+  color: #f8fafc !important;
+  border: 1px solid #1e3a5f !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-popup-tip {
+  background: #0a192f !important;
+}
+
+/* Custom pulse animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+/* High Quality Print Stylesheet for Civil Engineering PDF Report */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  header, footer, nav, button, input[type="range"] {
+    display: none !important;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .print\:block {
+    display: block !important;
+  }
+
+  .bg-navy-950, .bg-navy-900, .bg-navy-850, .bg-navy-800 {
+    background-color: white !important;
+    color: black !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  .text-white, .text-slate-100, .text-slate-200, .text-slate-300 {
+    color: #0f172a !important;
+  }
+
+  .text-slate-400, .text-slate-500 {
+    color: #475569 !important;
+  }
+
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  th, td {
+    border: 1px solid #94a3b8 !important;
+    padding: 6px !important;
+    color: black !important;
+  }
+}
